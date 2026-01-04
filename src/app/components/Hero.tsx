@@ -50,7 +50,7 @@ export function Hero() {
       <motion.div className="relative z-20 max-w-3xl mx-auto text-center space-y-8">
         <motion.h1
           variants={itemVariants}
-          className="text-md md:text-6xl lg:text-[25px] tracking-tight"
+          className="text-md md:text-6xl lg:text-[25px] tracking-tight font-bold mb-25"
           style={{ color: "var(--orbitnest-text)" }}
         >
           ORBITNEST

@@ -43,9 +43,15 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
+  const handleSubmit = async () => {
+    if (isSubmitting) {
+      return;
+    }
 
+    setIsSubmitting(true);
+    setErrors({}); // reset previous errors
+
+    // 1️⃣ Validate with Zod
     const result = formSchema.safeParse(formData);
 
     if (!result.success) {
@@ -57,14 +63,27 @@ export default function ContactForm() {
       });
 
       setErrors(fieldErrors);
-      setIsSubmitting(false); // stop submitting on error
+      setIsSubmitting(false);
       return;
     }
 
-    // Simulate API call (remove later)
-    setTimeout(() => {
-      console.log("Form submitted:", result.data);
+    // 2️⃣ Submit to Google Form
+    try {
+      const GOOGLE_FORM_ACTION =
+        "https://docs.google.com/forms/d/1u60H2SWuxzDvutxzMmYBxpdqP7AFbTAQSjdTav3zROs/formResponse";
 
+      await fetch(GOOGLE_FORM_ACTION, {
+        method: "POST",
+        body: new URLSearchParams({
+          "entry.952022691": formData.firstName,
+          "entry.1240073725": formData.lastName,
+          "entry.31294481": formData.email,
+          "entry.1369429473": formData.message,
+        }),
+        mode: "no-cors",
+      });
+
+      // 3️⃣ Reset form on success
       setFormData({
         firstName: "",
         lastName: "",
@@ -73,8 +92,13 @@ export default function ContactForm() {
       });
 
       setErrors({});
+    } catch (err) {
+      // Optional global error
+      console.error("Form submit failed", err);
+    } finally {
+      // 4️⃣ ALWAYS stop submitting
       setIsSubmitting(false); // stop submitting on success
-    }, 1000);
+    }
   };
 
   return (
