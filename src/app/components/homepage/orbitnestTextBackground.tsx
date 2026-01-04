@@ -38,7 +38,7 @@ export function OrbitnestTextBackground({
             : { opacity: [0.05, 0.12, 0.05] }
         }
         transition={{
-          duration: 18,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
         }}
