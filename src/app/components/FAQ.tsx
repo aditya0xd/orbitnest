@@ -1,5 +1,6 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function FAQ() {
   const faqs = [
@@ -42,13 +43,12 @@ export function FAQ() {
               <Accordion.Header>
                 <Accordion.Trigger
                   className="
-                    w-full px-6 py-5
-                    flex items-center justify-between gap-4
-                    text-left
-                    focus-visible:outline-none
-                    focus-visible:ring-2
-                    focus-visible:ring-black/10
-                  "
+                       group
+                      w-full px-6 py-5
+                      flex items-center justify-between gap-4
+                      text-left
+                      focus-visible:outline-none
+                      "
                 >
                   <span style={{ color: "var(--orbitnest-text)" }}>
                     {faq.question}
@@ -58,12 +58,12 @@ export function FAQ() {
                   <ArrowRight
                     size={20}
                     className="
-                      flex-shrink-0
-                      transition-transform
-                      duration-300
-                      ease-[cubic-bezier(0.25,0.1,0.25,1)]
-                      data-[state=open]:rotate-90
-                    "
+                        flex-shrink-0
+                        transition-transform
+                        duration-300
+                        ease-[cubic-bezier(0.16,1,0.3,1)]
+                        group-data-[state=open]:rotate-90
+                        "
                     style={{
                       color: "var(--orbitnest-accent)",
                       willChange: "transform",
@@ -73,20 +73,14 @@ export function FAQ() {
               </Accordion.Header>
 
               {/* CONTENT — NO HEIGHT ANIMATION */}
-              <Accordion.Content className="px-6 pb-5">
-                <div
-                  className="
-                    pt-2
-                    transition-[opacity,transform]
-                    duration-300
-                    ease-[cubic-bezier(0.25,0.1,0.25,1)]
-                    data-[state=closed]:opacity-0
-                    data-[state=closed]:translate-y-[2px]
-                    data-[state=open]:opacity-100
-                    data-[state=open]:translate-y-0
-                  "
-                  style={{ willChange: "transform, opacity" }}
-                >
+              <Accordion.Content
+                className="
+                  overflow-hidden
+                  data-[state=open]:animate-[accordion-down_400ms_cubic-bezier(0.16,1,0.3,1)]
+                  data-[state=closed]:animate-[accordion-up_300ms_cubic-bezier(0.16,1,0.3,1)]
+                "
+              >
+                <div className="pt-2 pb-5 px-6">
                   <p style={{ color: "var(--orbitnest-text-light)" }}>
                     {faq.answer}
                   </p>

@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { useReducedMotion } from "framer-motion";
+import BookAuditButton from "./CTA/BookAuditButton";
 
 export function Offer() {
   const prefersReducedMotion = !!useReducedMotion();
@@ -24,22 +25,6 @@ export function Offer() {
             ease: "easeOut",
           },
         },
-      };
-
-  const buttonVariants: Variants = prefersReducedMotion
-    ? {}
-    : {
-        hover: {
-          y: -2,
-          scale: 1.02,
-          boxShadow: "0 10px 24px rgba(0,0,0,0.12)",
-          transition: {
-            type: "spring",
-            stiffness: 280,
-            damping: 20,
-          },
-        },
-        tap: { scale: 0.97 },
       };
 
   return (
@@ -129,28 +114,20 @@ export function Offer() {
 
           {/* CTA */}
           <div className="flex justify-center pt-2">
-            <motion.button
-              aria-label="Get a free funnel audit for your coaching business"
-              variants={buttonVariants}
-              whileHover={prefersReducedMotion ? undefined : "hover"}
-              whileTap={prefersReducedMotion ? undefined : "tap"}
-              className="
-                px-8 py-4
-                rounded-xl
-                text-md
-                tracking-tight
-                font-semibold
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-black/10
-              "
-              style={{
-                backgroundColor: "var(--orbitnest-accent)",
-                color: "white",
+            <BookAuditButton
+              onClick={() => {
+                const el = document.getElementById("contact-form");
+                el?.scrollIntoView({ behavior: "smooth" });
+
+                // wait for scroll, then focus
+                setTimeout(() => {
+                  const input = document.getElementById(
+                    "contact-first-name"
+                  ) as HTMLInputElement | null;
+                  input?.focus();
+                }, 800);
               }}
-            >
-              Get a Free Funnel Audit
-            </motion.button>
+            />
           </div>
 
           {/* Post-CTA expectation */}
