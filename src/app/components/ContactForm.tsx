@@ -102,10 +102,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section
-      id="contact-form"
-      className="min-h-screen flex flex-col md:flex-row"
-    >
+    <section className="relative min-h-screen flex flex-col md:flex-row">
       {/* Left Side - Black Background */}
       <div
         className="w-full md:w-1/2 text-white p-16 flex flex-col justify-start items-start"
@@ -127,7 +124,10 @@ export default function ContactForm() {
 
       {/* Right Side - Form */}
 
-      <div className="w-full md:w-1/2 bg-gray-50 p-16 flex items-center justify-center">
+      <div
+        id="contact-form"
+        className="w-full md:w-1/2 bg-gray-50 p-16 flex items-center justify-center"
+      >
         <form
           onSubmit={(e) => {
             e.preventDefault();

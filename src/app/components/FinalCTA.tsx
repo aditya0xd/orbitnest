@@ -38,7 +38,12 @@ export function FinalCTA() {
           <BookAuditButton
             onClick={() => {
               const el = document.getElementById("contact-form");
-              el?.scrollIntoView({ behavior: "smooth" });
+              const prefersReducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+              ).matches;
+              el?.scrollIntoView({
+                behavior: prefersReducedMotion ? "auto" : "smooth",
+              });
 
               // wait for scroll, then focus
               setTimeout(() => {
