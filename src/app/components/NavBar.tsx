@@ -17,7 +17,18 @@ export function Navbar({ name }: NavbarProps) {
   //   const pathname = useLocation();
   //   const searchParams = useSearchParams();
 
-  const handleOpenBooking = () => {};
+  const handleOpenBooking = () => {
+    const el = document.getElementById("contact-form");
+    el?.scrollIntoView({ behavior: "smooth" });
+
+    // wait for scroll, then focus
+    setTimeout(() => {
+      const input = document.getElementById(
+        "contact-first-name",
+      ) as HTMLInputElement | null;
+      input?.focus();
+    }, 1500);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
