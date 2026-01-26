@@ -8,10 +8,12 @@ import { Offer } from "./components/Offer";
 import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import ContactForm from "./components/ContactForm";
+import { Navbar } from "./components/NavBar";
 
 export default function App() {
   return (
     <div className="min-h-screen">
+      <Navbar name="Orbitnest" />
       <Hero />
       <Problem />
       <Reframe />
