@@ -2,9 +2,10 @@ import { motion, Variants, useReducedMotion } from "framer-motion";
 
 type BookAuditButtonProps = {
   onClick?: () => void;
+  title?: string;
 };
 
-export default function BookAuditButton({ onClick }: BookAuditButtonProps) {
+export default function BookAuditButton({ onClick, title }: BookAuditButtonProps) {
   const prefersReducedMotion = !!useReducedMotion();
 
   const buttonVariants: Variants = prefersReducedMotion
@@ -27,11 +28,11 @@ export default function BookAuditButton({ onClick }: BookAuditButtonProps) {
       whileTap={prefersReducedMotion ? undefined : "tap"}
       className="px-8 py-4 text-md cursor-pointer rounded-lg font-semibold"
       style={{
-        backgroundColor: "var(--orbitnest-accent)",
-        color: "white",
+        backgroundColor: "var(--primary)",
+        color: "var(--primary-foreground)",
       }}
     >
-      Get a Free Funnel Audit
+      {title?title:"Book a Free Call"}
     </motion.button>
   );
 }

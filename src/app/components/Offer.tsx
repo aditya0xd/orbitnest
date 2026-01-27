@@ -30,7 +30,7 @@ export function Offer() {
   return (
     <section
       className="py-24 px-6"
-      style={{ backgroundColor: "var(--orbitnest-bg)" }}
+      style={{ backgroundColor: "var(--background)" }}
     >
       <div className="max-w-4xl mx-auto">
         <motion.div
@@ -38,10 +38,9 @@ export function Offer() {
           whileInView="show"
           viewport={{ once: true, margin: "-120px" }}
           variants={containerVariants}
-          className="rounded-2xl border p-8 md:p-12 space-y-12"
+          className="rounded-2xl border bg-card p-8 md:p-12 space-y-12"
           style={{
-            backgroundColor: "white",
-            borderColor: "var(--orbitnest-border)",
+            borderColor: "var(--border)",
             boxShadow:
               "0 10px 30px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6)",
           }}
@@ -51,7 +50,7 @@ export function Offer() {
             <span
               className="h-1 w-10 rounded-full"
               style={{
-                backgroundColor: "var(--orbitnest-accent)",
+                backgroundColor: "var(--primary)",
                 opacity: 0.4,
               }}
             />
@@ -61,14 +60,14 @@ export function Offer() {
           <div className="space-y-4 text-center">
             <h2
               className="text-3xl md:text-4xl leading-tight"
-              style={{ color: "var(--orbitnest-text)" }}
+              style={{ color: "var(--foreground)" }}
             >
               Start with a free website & funnel audit
             </h2>
 
             <p
               className="text-lg max-w-2xl mx-auto leading-relaxed"
-              style={{ color: "var(--orbitnest-text-light)" }}
+              style={{ color: "var(--muted-foreground)" }}
             >
               We'll review your current setup (or help you plan your first
               funnel from scratch) and show you exactly what's missing.
@@ -78,7 +77,7 @@ export function Offer() {
           {/* List framing */}
           <p
             className="text-sm text-center opacity-70"
-            style={{ color: "var(--orbitnest-text-light)" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             In the audit, you’ll get:
           </p>
@@ -90,13 +89,13 @@ export function Offer() {
                 <span
                   className="mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0"
                   style={{
-                    backgroundColor: "var(--orbitnest-accent)",
+                    backgroundColor: "var(--primary)",
                     boxShadow: "0 0 0 3px rgba(0,0,0,0.03)",
                   }}
                 />
                 <p
                   className="leading-relaxed"
-                  style={{ color: "var(--orbitnest-text-light)" }}
+                  style={{ color: "var(--muted-foreground)" }}
                 >
                   {item}
                 </p>
@@ -107,7 +106,7 @@ export function Offer() {
           {/* Reassurance */}
           <p
             className="text-sm text-center italic opacity-60"
-            style={{ color: "var(--orbitnest-text-light)" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             No sales pressure. If it’s not a fit, we’ll tell you.
           </p>
@@ -133,7 +132,7 @@ export function Offer() {
           {/* Post-CTA expectation */}
           <p
             className="text-sm text-center opacity-60"
-            style={{ color: "var(--orbitnest-text-light)" }}
+            style={{ color: "var(--muted-foreground)" }}
           >
             Takes ~15 minutes. No obligation.
           </p>

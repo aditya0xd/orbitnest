@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 export function Reframe() {
   return (
     <section
-      className="py-24 px-6"
-      style={{ backgroundColor: "var(--orbitnest-bg)" }}
+      className="py-24 px-6 bg-background"
     >
       <motion.div
         className="max-w-3xl mx-auto text-center space-y-8"
@@ -22,8 +21,7 @@ export function Reframe() {
       >
         {/* Headline */}
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl"
-          style={{ color: "var(--orbitnest-text)" }}
+          className="text-3xl md:text-4xl lg:text-5xl text-foreground"
           variants={{
             hidden: { opacity: 0, y: 24 },
             show: {
@@ -54,8 +52,7 @@ export function Reframe() {
           ].map((line) => (
             <motion.p
               key={line}
-              className="text-xl md:text-2xl"
-              style={{ color: "var(--orbitnest-text-light)" }}
+              className="text-xl md:text-2xl text-muted-foreground"
               variants={{
                 hidden: { opacity: 0, y: 16 },
                 show: {
@@ -72,8 +69,7 @@ export function Reframe() {
 
         {/* Final reframe */}
         <motion.p
-          className="text-xl md:text-2xl pt-8"
-          style={{ color: "var(--orbitnest-text)" }}
+          className="text-xl md:text-2xl pt-8 text-foreground"
           variants={{
             hidden: { opacity: 0, y: 20 },
             show: {

@@ -1,153 +1,71 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+} from "./ui/menubar";
+import { MobileMenu } from "./MoblieMenu";
+
 import { Button } from "./ui/button";
-import { cn } from "./ui/utils";
 
-// import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
-
-interface NavbarProps {
-  name: string;
-}
-
-export function Navbar({ name }: NavbarProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  //   const router = useNavigate();
-  //   const pathname = useLocation();
-  //   const searchParams = useSearchParams();
-
-  const handleOpenBooking = () => {
-    const el = document.getElementById("contact-form");
-    el?.scrollIntoView({ behavior: "smooth" });
-
-    // wait for scroll, then focus
-    setTimeout(() => {
-      const input = document.getElementById(
-        "contact-first-name",
-      ) as HTMLInputElement | null;
-      input?.focus();
-    }, 1500);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Lock body scroll when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
-
-  const navLinks = [
-    { name: "Programs", to: "" },
-    { name: "Transformation", to: "" },
-    { name: "About", to: "" },
-    { name: "Stories", to: "" },
-  ];
-
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
-
+export function Navbar({ name }: { name: string }) {
   return (
-    <>
-      <header
-        className={cn(
-          "sticky top-0 z-40 w-full transition-all duration-300",
-          scrolled
-            ? "bg-background/80 backdrop-blur-md shadow-sm"
-            : "bg-background",
-        )}
-      >
-        <div className="container mx-auto px-5 md:px-12 h-[72px] flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="text-xl font-bold text-foreground">{name}</div>
-          </div>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                className="text-primary font-semibold hover:text-primary/70 transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <Button
-              onClick={handleOpenBooking}
-              className="hidden md:inline-flex"
-            >
-              Apply for Coaching
-            </Button>
-
-            {/* Mobile Hamburger */}
-            <button
-              className="md:hidden text-foreground p-2"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isOpen}
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+    <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md shadow-sm">
+      <div className="container mx-auto px-5 h-[72px] flex items-center justify-between gap-20">
+        <div className="flex items-center gap-4">
+          <img src="/orbitnest-logo.png" alt="Logo" width={40} height={40} />
+          <div className="text-xl font-bold">{name}</div>
         </div>
-      </header>
 
-      {/* Mobile Menu Backdrop */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-primary/60 z-[50] md:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+        {/* Desktop */}
+        <div className="hidden md:flex justify-between items-center gap-8">
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger>Programs</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Online</MenubarItem>
+                <MenubarItem>Offline</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
 
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          "fixed top-0 left-0 bottom-0 w-[80%] max-w-[300px] bg-background z-[60] p-8 flex flex-col gap-6 shadow-xl transition-transform duration-300 ease-out md:hidden",
-          isOpen ? "translate-x-0" : "-translate-x-full",
-        )}
-      >
-        <div className="text-xl font-bold text-foreground mb-4">{name}</div>
-        <nav className="flex flex-col gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.to}
-              className="text-lg font-semibold text-foreground hover:text-accent transition-colors"
-              onClick={handleLinkClick}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-        <Button
+            <MenubarMenu>
+              <MenubarTrigger>About</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Team</MenubarItem>
+                <MenubarItem>Story</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+
+            <MenubarMenu>
+              <MenubarTrigger>Stories</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Clients</MenubarItem>
+                <MenubarItem>Results</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
+        </div>
+        <div className="hidden md:flex items-center gap-4">
+          <Button
           onClick={() => {
-            handleOpenBooking();
-            setIsOpen(false);
-          }}
-          className="mt-4 w-full"
-        >
-          Apply for Coaching
-        </Button>
+              const el = document.getElementById("contact-form");
+              el?.scrollIntoView({ behavior: "smooth" });
+
+              // wait for scroll, then focus
+              setTimeout(() => {
+                const input = document.getElementById(
+                  "contact-first-name"
+                ) as HTMLInputElement | null;
+                input?.focus();
+              }, 1500);
+            }}
+            >Book a Call</Button>
+        </div>
+
+        {/* Mobile */}
+        <MobileMenu />
       </div>
-    </>
+    </header>
   );
 }

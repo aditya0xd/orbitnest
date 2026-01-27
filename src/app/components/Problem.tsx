@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Problem() {
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "#F5F5F4" }}>
+    <section className="py-24 px-6 bg-secondary/30">
       <motion.div
         className="max-w-3xl mx-auto text-center space-y-12"
         initial="hidden"
@@ -34,7 +34,7 @@ export function Problem() {
               <motion.p
                 key={line}
                 className="text-2xl md:text-3xl"
-                style={{ color: "var(--orbitnest-text)" }}
+                style={{ color: "var(--foreground)" }}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   show: {
@@ -85,8 +85,8 @@ export function Problem() {
                   }`}
                   style={{
                     color: isLast
-                      ? "var(--orbitnest-text)"
-                      : "var(--orbitnest-text-light)",
+                      ? "var(--foreground)"
+                      : "var(--muted-foreground)",
                     opacity: isLast ? 1 : 0.75,
                   }}
                 >
@@ -98,7 +98,7 @@ export function Problem() {
                   <div
                     className="mx-auto mt-3 h-px w-12"
                     style={{
-                      backgroundColor: "var(--orbitnest-accent)",
+                      backgroundColor: "var(--primary)",
                       opacity: 0.4,
                     }}
                   />
@@ -110,7 +110,7 @@ export function Problem() {
 
         <motion.p
           className="text-base md:text-lg pt-6"
-          style={{ color: "var(--orbitnest-text)" }}
+          style={{ color: "var(--foreground)" }}
           variants={{
             hidden: { opacity: 0 },
             show: {
@@ -125,12 +125,12 @@ export function Problem() {
         {/* Body */}
         <motion.p
           className="text-lg md:text-xl max-w-2xl mx-auto pt-8"
-          style={{ color: "var(--orbitnest-text-light)" }}
+          style={{ color: "var(--muted-foreground)" }}
         >
           You're burning hours on{" "}
           <span
             className="font-medium"
-            style={{ color: "var(--orbitnest-text)" }}
+            style={{ color: "var(--foreground)" }}
           >
             conversations that go nowhere,
           </span>

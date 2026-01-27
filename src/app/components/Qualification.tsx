@@ -17,7 +17,7 @@ export function Qualification() {
   ];
 
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "#F5F5F4" }}>
+    <section className="py-24 px-6 bg-secondary/30">
       <motion.div
         className="max-w-6xl mx-auto"
         initial="hidden"
@@ -43,7 +43,7 @@ export function Qualification() {
           >
             <h2
               className="text-2xl md:text-3xl"
-              style={{ color: "var(--orbitnest-text)" }}
+              style={{ color: "var(--foreground)" }}
             >
               This is for you if
             </h2>
@@ -54,7 +54,7 @@ export function Qualification() {
                   <span
                     className="mt-1 flex h-5 w-5 items-center justify-center rounded-full"
                     style={{
-                      backgroundColor: "var(--orbitnest-accent)",
+                      backgroundColor: "var(--primary)",
                       opacity: 0.85,
                     }}
                   >
@@ -63,7 +63,7 @@ export function Qualification() {
 
                   <p
                     className="leading-relaxed"
-                    style={{ color: "var(--orbitnest-text-light)" }}
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     {item}
                   </p>
@@ -90,7 +90,7 @@ export function Qualification() {
           >
             <h2
               className="text-2xl md:text-3xl"
-              style={{ color: "var(--orbitnest-text)" }}
+              style={{ color: "var(--foreground)" }}
             >
               This is not for
             </h2>
@@ -101,7 +101,7 @@ export function Qualification() {
                   <span
                     className="mt-1 flex h-5 w-5 items-center justify-center rounded-full"
                     style={{
-                      backgroundColor: "var(--orbitnest-text-light)",
+                      backgroundColor: "var(--muted-foreground)",
                       opacity: 0.35,
                     }}
                   >
@@ -110,7 +110,7 @@ export function Qualification() {
 
                   <p
                     className="leading-relaxed opacity-75"
-                    style={{ color: "var(--orbitnest-text-light)" }}
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     {item}
                   </p>

@@ -1,8 +1,8 @@
 /* @layer base {
   html {
     font-family: Inter, system-ui, sans-serif;
-    color: var(--orbitnest-text);
-    background-color: var(--orbitnest-bg);
+    color: var(--foreground);
+    background-color: var(--background);
   }
 
   h1, h2, h3, h4 {
@@ -12,6 +12,6 @@
   }
 
   p {
-    color: var(--orbitnest-text-light);
+    color: var(--muted-foreground);
   }
 } */

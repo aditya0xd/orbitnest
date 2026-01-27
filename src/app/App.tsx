@@ -12,8 +12,8 @@ import { Navbar } from "./components/NavBar";
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      {/* <Navbar name="Orbitnest" /> */}
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar name="Orbitnest" />
       <Hero />
       <Problem />
       <Reframe />

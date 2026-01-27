@@ -27,8 +27,7 @@ const services = [
 export function WhatWeBuild() {
   return (
     <section
-      className="py-24 px-6"
-      style={{ backgroundColor: "var(--orbitnest-bg)" }}
+      className="py-24 px-6 bg-background"
     >
       <motion.div
         className="max-w-6xl mx-auto"
@@ -42,8 +41,7 @@ export function WhatWeBuild() {
       >
         {/* Heading */}
         <motion.h2
-          className="text-3xl md:text-4xl text-center mb-16 leading-tight"
-          style={{ color: "var(--orbitnest-text)" }}
+          className="text-3xl md:text-4xl text-center mb-16 leading-tight text-foreground"
           variants={{
             hidden: { opacity: 0, y: 14 },
             show: {
@@ -74,30 +72,22 @@ export function WhatWeBuild() {
                 },
               }}
               whileHover={{ y: -4 }}
-              className="rounded-xl border p-8 transition-shadow"
-              style={{
-                backgroundColor: "white",
-                borderColor: "var(--orbitnest-border)",
-                boxShadow: "0 6px 18px rgba(0,0,0,0.04)",
-              }}
+              className="rounded-xl border border-border p-8 transition-shadow bg-card shadow-sm hover:shadow-md"
             >
               <div className="flex items-start gap-3 mb-4">
                 <Check
                   size={18}
-                  className="mt-1 opacity-70"
-                  style={{ color: "var(--orbitnest-accent)" }}
+                  className="mt-1 opacity-70 text-primary"
                 />
                 <h3
-                  className="text-lg font-medium leading-snug"
-                  style={{ color: "var(--orbitnest-text)" }}
+                  className="text-lg font-medium leading-snug text-foreground"
                 >
                   {service.title}
                 </h3>
               </div>
 
               <p
-                className="leading-relaxed"
-                style={{ color: "var(--orbitnest-text-light)" }}
+                className="leading-relaxed text-muted-foreground"
               >
                 {service.description}
               </p>

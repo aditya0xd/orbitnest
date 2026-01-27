@@ -22,11 +22,11 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: "#F5F5F4" }}>
+    <section className="py-24 px-6 bg-secondary/30">
       <div className="max-w-3xl mx-auto">
         <h2
           className="text-3xl md:text-4xl text-center mb-12"
-          style={{ color: "var(--orbitnest-text)" }}
+          style={{ color: "var(--foreground)" }}
         >
           Frequently Asked Questions
         </h2>
@@ -36,8 +36,8 @@ export function FAQ() {
             <Accordion.Item
               key={index}
               value={`item-${index}`}
-              className="rounded-lg border bg-white"
-              style={{ borderColor: "var(--orbitnest-border)" }}
+              className="rounded-lg border bg-card"
+              style={{ borderColor: "var(--border)" }}
             >
               {/* HEADER */}
               <Accordion.Header>
@@ -50,7 +50,7 @@ export function FAQ() {
                       focus-visible:outline-none
                       "
                 >
-                  <span style={{ color: "var(--orbitnest-text)" }}>
+                  <span style={{ color: "var(--foreground)" }}>
                     {faq.question}
                   </span>
 
@@ -65,7 +65,7 @@ export function FAQ() {
                         group-data-[state=open]:rotate-90
                         "
                     style={{
-                      color: "var(--orbitnest-accent)",
+                      color: "var(--primary)",
                       willChange: "transform",
                     }}
                   />
@@ -81,7 +81,7 @@ export function FAQ() {
                 "
               >
                 <div className="pt-2 pb-5 px-6">
-                  <p style={{ color: "var(--orbitnest-text-light)" }}>
+                  <p style={{ color: "var(--muted-foreground)" }}>
                     {faq.answer}
                   </p>
                 </div>

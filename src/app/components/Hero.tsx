@@ -36,40 +36,28 @@ export function Hero() {
   return (
     <motion.section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center px-6 py-20"
-      style={{ backgroundColor: "var(--orbitnest-bg)" }}
+      className="relative min-h-screen flex items-center justify-center px-6 py-20 bg-background"
       initial="hidden"
       animate="show"
       variants={containerVariants}
     >
-      <HeroBackground
-        scrollYProgress={scrollYProgress}
-        prefersReducedMotion={prefersReducedMotion}
-      />
+      <HeroBackground />
 
       <motion.div className="relative z-20 max-w-3xl mx-auto text-center space-y-8">
+     
         <motion.h1
           variants={itemVariants}
-          className="text-md md:text-6xl lg:text-[25px] tracking-tight font-bold mb-25"
-          style={{ color: "var(--orbitnest-text)" }}
-        >
-          ORBITNEST
-        </motion.h1>
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-7xl tracking-tight"
-          style={{ color: "var(--orbitnest-text)" }}
+          className="text-5xl md:text-6xl lg:text-7xl tracking-tight text-foreground"
         >
           Stop Selling Your{" "}
-          <span className="font-semibold" style={{ color: "#3a3a3b" }}>
+          <span className="font-semibold text-primary/80">
             Coaching in DMs
           </span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-xl md:text-2xl max-w-2xl mx-auto opacity-70"
-          style={{ color: "var(--orbitnest-text-light)" }}
+          className="text-xl md:text-2xl max-w-2xl mx-auto opacity-70 text-muted-foreground"
         >
           We build websites and funnels for fitness & health coaches that turn
           content into booked calls — without endless back-and-forth.
@@ -93,15 +81,13 @@ export function Hero() {
           />
 
           <p
-            className="text-sm"
-            style={{ color: "var(--orbitnest-text-light)" }}
+             className="text-sm text-muted-foreground"
           >
             {" "}
           </p>
 
           <p
-            className="text-sm"
-            style={{ color: "var(--orbitnest-text-light)" }}
+             className="text-sm text-muted-foreground"
           >
             Built specifically for online fitness & health coaches
           </p>

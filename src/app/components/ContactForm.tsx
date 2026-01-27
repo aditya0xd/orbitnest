@@ -106,7 +106,7 @@ export default function ContactForm() {
       {/* Left Side - Black Background */}
       <div
         className="w-full md:w-1/2 text-white p-16 flex flex-col justify-start items-start"
-        style={{ backgroundColor: "var(--orbitnest-text)" }}
+        style={{ backgroundColor: "#030213" }}
       >
         <h1 className="text-7xl font-light leading-tight mb-16">
           Let's ignite
@@ -126,7 +126,7 @@ export default function ContactForm() {
 
       <div
         id="contact-form"
-        className="w-full md:w-1/2 bg-gray-50 p-16 flex items-center justify-center"
+        className="w-full md:w-1/2 bg-muted/40 p-16 flex items-center justify-center"
       >
         <form
           onSubmit={(e) => {
@@ -138,7 +138,7 @@ export default function ContactForm() {
             {/* Name Fields */}
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   First name *
                 </label>
                 <input
@@ -149,9 +149,9 @@ export default function ContactForm() {
                   value={formData.firstName}
                   onChange={handleChange}
                   placeholder="Enter your first name"
-                  className={`w-full px-4 py-3 border ${
-                    errors.firstName ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full px-4 py-3 bg-background border ${
+                    errors.firstName ? "border-destructive" : "border-input"
+                  } focus:outline-none focus:ring-2 focus:ring-ring`}
                 />
                 {errors.firstName && (
                   <p className="text-red-500 text-sm mt-1">
@@ -160,7 +160,7 @@ export default function ContactForm() {
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-foreground mb-2">
                   Last name
                 </label>
                 <input
@@ -169,9 +169,9 @@ export default function ContactForm() {
                   value={formData.lastName}
                   onChange={handleChange}
                   placeholder="Enter your last name"
-                  className={`w-full px-4 py-3 border ${
-                    errors.lastName ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full px-4 py-3 bg-background border ${
+                    errors.lastName ? "border-destructive" : "border-input"
+                  } focus:outline-none focus:ring-2 focus:ring-ring`}
                 />
                 {errors.lastName && (
                   <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
@@ -190,9 +190,9 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email address"
-                className={`w-full px-4 py-3 border ${
-                  errors.email ? "border-red-500" : "border-gray-300"
-                } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full px-4 py-3 bg-background border ${
+                  errors.email ? "border-destructive" : "border-input"
+                } focus:outline-none focus:ring-2 focus:ring-ring`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -210,12 +210,12 @@ export default function ContactForm() {
                 onChange={handleChange}
                 placeholder="Tell us about your coaching business and what you want to improve"
                 rows={6}
-                className={`w-full px-4 py-3 border ${
-                  errors.message ? "border-red-500" : "border-gray-300"
-                } focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none`}
+                className={`w-full px-4 py-3 bg-background border ${
+                  errors.message ? "border-destructive" : "border-input"
+                } focus:outline-none focus:ring-2 focus:ring-ring resize-none`}
               />
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                <p className="text-destructive text-sm mt-1">{errors.message}</p>
               )}
             </div>
 
@@ -226,8 +226,8 @@ export default function ContactForm() {
               className={`w-full py-4 text-lg font-medium transition-colors cursor-pointer
                 ${
                   isSubmitting
-                    ? "bg-gray-600 cursor-not-allowed"
-                    : "bg-black text-white hover:bg-gray-800"
+                    ? "bg-muted cursor-not-allowed"
+                    : "bg-primary text-primary-foreground hover:opacity-90"
                 }
                 `}
             >

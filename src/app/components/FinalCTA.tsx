@@ -19,7 +19,7 @@ export function FinalCTA() {
   return (
     <section
       className="py-24 px-6"
-      style={{ backgroundColor: "var(--orbitnest-text)" }}
+      style={{ backgroundColor: "#030213" }}
     >
       <motion.div
         className="max-w-3xl mx-auto text-center space-y-10"
@@ -55,7 +55,7 @@ export function FinalCTA() {
             }}
           />
 
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-white/70">
             Limited slots each week to ensure quality reviews
           </p>
         </div>
