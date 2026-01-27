@@ -102,7 +102,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row">
+    <section id="contact" className="relative min-h-screen flex flex-col md:flex-row">
       {/* Left Side - Black Background */}
       <div
         className="w-full md:w-1/2 text-white p-16 flex flex-col justify-start items-start"

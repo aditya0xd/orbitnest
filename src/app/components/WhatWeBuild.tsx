@@ -27,6 +27,7 @@ const services = [
 export function WhatWeBuild() {
   return (
     <section
+      id="services"
       className="py-24 px-6 bg-background"
     >
       <motion.div

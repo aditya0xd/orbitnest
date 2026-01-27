@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Problem() {
   return (
-    <section className="py-24 px-6 bg-secondary/30">
+    <section id="problem" className="py-24 px-6 bg-secondary/30">
       <motion.div
         className="max-w-3xl mx-auto text-center space-y-12"
         initial="hidden"

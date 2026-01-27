@@ -29,6 +29,7 @@ export function Offer() {
 
   return (
     <section
+      id="programs"
       className="py-24 px-6"
       style={{ backgroundColor: "var(--background)" }}
     >
