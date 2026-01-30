@@ -40,7 +40,7 @@ export function Offer() {
           viewport={{ once: true, margin: "-120px" }}
           variants={containerVariants}
           className={`rounded-2xl border p-8 md:p-12 space-y-12
-           bg-[url('/audit2.png')] bg-contain bg-no-repeat bg-[#141413] bg-center`}
+           bg-[url('/audit2.png')] bg-contain bg-no-repeat bg-[#141413] bg-right md:bg-center`}
           style={{
             borderColor: "var(--border)",
             boxShadow:
@@ -96,7 +96,7 @@ export function Offer() {
                   }}
                 />
                 <p
-                  className="leading-relaxed w-xs"
+                  className="leading-relaxed w-45 md:w-xs lg:w-sm"
                   style={{ color: "var(--muted-foreground)" }}
                 >
                   {item}
