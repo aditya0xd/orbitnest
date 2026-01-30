@@ -5,7 +5,7 @@ const steps = ["Content", "Website", "Application", "Call", "Client"];
 
 export function Mechanism() {
   return (
-    <section className="py-24 px-6 2xl:py-32 bg-secondary/30">
+    <section id="how-it-works" className="py-24 px-6 2xl:py-32 bg-secondary/30">
       <motion.div
         className="max-w-6xl 2xl:max-w-7xl mx-auto"
         initial="hidden"

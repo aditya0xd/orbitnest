@@ -22,7 +22,7 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-secondary/30">
+    <section id="faq" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-3xl mx-auto">
         <h2
           className="text-3xl md:text-4xl text-center mb-12"
