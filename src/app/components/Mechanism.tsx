@@ -92,9 +92,8 @@ export function Mechanism() {
                 return (
                   <motion.div
                     key={step}
-                    className={`relative flex items-center ${
-                      isLeft ? "justify-start pr-10" : "justify-end pl-10"
-                    }`}
+                    className={`relative flex items-center
+                      ${isLeft ? "justify-start pr-10" : "justify-end pl-10"}`}
                     initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
@@ -106,7 +105,7 @@ export function Mechanism() {
                   >
                     {/* Dot */}
                     <span
-                      className="absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full z-10 bg-primary"
+                      className={`absolute left-1/2 -translate-x-1/2 h-3 w-3 rounded-full z-10 ${isFinal ? "border-green-600" : "bg-primary"}`}
                     />
 
                     {/* Card */}
@@ -114,8 +113,8 @@ export function Mechanism() {
                       whileHover={{ y: -2 }}
                       className={`w-[85%] rounded-xl border px-6 py-6 transition-shadow bg-card ${
                         isFinal
-                          ? "border-primary shadow-lg"
-                          : "border-border shadow-md"
+                          ? "border-green-600 shadow-xl shadow-green-300/10"
+                          : "border-primary/60 shadow-md"
                       }`}
                     >
                       <p

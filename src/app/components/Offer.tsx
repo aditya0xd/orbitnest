@@ -38,7 +38,8 @@ export function Offer() {
           whileInView="show"
           viewport={{ once: true, margin: "-120px" }}
           variants={containerVariants}
-          className="rounded-2xl border bg-card p-8 md:p-12 space-y-12"
+          className={`rounded-2xl border p-8 md:p-12 space-y-12
+           bg-[url('/audit2.png')] bg-contain bg-no-repeat bg-[#141413] bg-center`}
           style={{
             borderColor: "var(--border)",
             boxShadow:
@@ -87,14 +88,14 @@ export function Offer() {
             {auditIncludes.map((item) => (
               <li key={item} className="flex items-start gap-4">
                 <span
-                  className="mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0"
+                  className="mt-2 h-1.5 w-1.5  rounded-full flex-shrink-0"
                   style={{
                     backgroundColor: "var(--primary)",
                     boxShadow: "0 0 0 3px rgba(0,0,0,0.03)",
                   }}
                 />
                 <p
-                  className="leading-relaxed"
+                  className="leading-relaxed w-xs"
                   style={{ color: "var(--muted-foreground)" }}
                 >
                   {item}
@@ -121,7 +122,7 @@ export function Offer() {
                 // wait for scroll, then focus
                 setTimeout(() => {
                   const input = document.getElementById(
-                    "contact-first-name"
+                    "contact-first-name",
                   ) as HTMLInputElement | null;
                   input?.focus();
                 }, 800);
