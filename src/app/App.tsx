@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Hero } from "./components/Hero";
 import { Problem } from "./components/Problem";
 import { Reframe } from "./components/Reframe";
@@ -24,6 +25,7 @@ export default function App() {
       <FAQ />
       <FinalCTA />
       <ContactForm />
+      <Analytics />
     </div>
   );
 }
